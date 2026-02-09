@@ -3,7 +3,7 @@ import { GoogleContactPluginSettings, DEFAULT_SETTINGS } from './Infrastructure/
 import { SyncGoogleContactsCommand } from './Infrastructure/Obsidian/Commands/SyncGoogleContactsCommand';
 import { ProcessUnsyncedGoogleContactsCommand } from './Infrastructure/Obsidian/Commands/ProcessUnsyncedGoogleContactsCommand';
 import { SettingsView } from './Infrastructure/Obsidian/Views/SettingsView';
-import { ObsidianNoteRepository } from "./libs/obsidian-plugin-utils";
+import { ObsidianNoteRepository } from "@elo/obsidian-plugin-utils";
 import { ObsidianUIService } from './Infrastructure/Obsidian/ObsidianUIService';
 import { GoogleContactAdapter } from './Infrastructure/Adapters/GoogleContactAdapter';
 import { SyncContactUseCase } from './Application/UseCases/SyncContactUseCase';

@@ -1,5 +1,5 @@
 import { Contact } from './Contact';
-import { FrontmatterKeys } from "../libs/core";
+import { FrontmatterKeys } from "@elo/core";
 
 export class GoogleContactTransformer {
 

@@ -2,10 +2,10 @@
   "name": "elo-obsidian-google-contacts-plugin",
   "version": "1.0.1",
   "description": "Obsidian plugin for Google Contacts integration.",
-  "main": "build/main.js",
+  "main": ".dist/main.js",
   "scripts": {
     "build": "npm run typecheck && node esbuild.config.mjs",
-    "dev": "node ../../libs/obsidian-plugin-utils/scripts/version-bump.js && node esbuild.config.mjs --watch",
+    "dev": "node ../../libs/obsidian-plugin-utils/scripts/push-to-vaults.js && node esbuild.config.mjs --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write .",
@@ -37,9 +37,11 @@
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "@elo/obsidian-plugin-utils": "workspace:*"
   },
   "dependencies": {
-    "@google/genai": "^1.29.0"
+    "@elo/core": "workspace:*",
+    "@elo/obsidian-plugin-utils": "workspace:*"
   }
 }

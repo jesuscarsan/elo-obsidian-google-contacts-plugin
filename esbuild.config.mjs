@@ -5,7 +5,8 @@ import path from 'path';
 const args = process.argv.slice(2);
 const watch = args.includes('--watch');
 
-const vaults = []; // Open Source: No auto-deploy
+const config = JSON.parse(fs.readFileSync('../../elo.config.json', 'utf8'));
+const vaults = config.vaults;
 
 const targetDirs = vaults.map(vault => path.join(vault, '.obsidian/plugins/elo-obsidian-google-contacts-plugin'));
 
@@ -19,7 +20,7 @@ const copyPlugin = {
         }
 
         const files = [
-          'main.js',
+          '.dist/main.js',
           'manifest.json',
           '.hotreload' // Optional, if using hot-reload plugin
         ];
@@ -29,12 +30,12 @@ const copyPlugin = {
         }
         
         if (watch) {
-          files.push('main.js.map');
+          files.push('.dist/main.js.map');
         }
 
         files.forEach((file) => {
           const src = typeof file === 'string' ? file : file.src;
-          const destName = typeof file === 'string' ? file : file.dest;
+          const destName = typeof file === 'string' ? path.basename(file) : file.dest;
           
           if (fs.existsSync(src)) {
             const dest = path.join(dir, destName);
@@ -49,7 +50,7 @@ const copyPlugin = {
 
 const buildOptions = {
   entryPoints: ['src/main.ts'],
-  outfile: 'main.js',
+  outfile: '.dist/main.js',
   bundle: true,
   platform: 'browser',
   target: 'es2018',
