@@ -1,5 +1,5 @@
 import { Contact, ContactAdapter } from "../../Domain/Contact";
-import { NoteRepository } from "@elo/obsidian-plugin-utils";
+import { NoteRepository } from "@elo/obsidian-plugin";
 import { UIService } from "../../Domain/ports/UIService";
 import { GoogleContactTransformer } from "../../Domain/GoogleContactTransformer";
 

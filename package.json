@@ -21,6 +21,7 @@
   "author": "Joshua",
   "license": "MIT",
   "devDependencies": {
+    "@elo/obsidian-plugin": "workspace:*",
     "@jest/globals": "^30.2.0",
     "@types/jest": "^30.0.0",
     "@types/js-yaml": "^4.0.9",
@@ -32,16 +33,15 @@
     "eslint-config-prettier": "^9.1.0",
     "jest": "^30.2.0",
     "js-yaml": "^4.1.1",
-    "obsidian": "^1.6.3",
+    "obsidian": "^1.12.0",
     "prettier": "^3.2.5",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
-    "typescript": "^5.4.5",
-    "@elo/obsidian-plugin-utils": "workspace:*"
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "@elo/core": "workspace:*",
-    "@elo/obsidian-plugin-utils": "workspace:*"
+    "@elo/obsidian-plugin": "workspace:*"
   }
 }
