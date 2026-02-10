@@ -5,7 +5,7 @@
   "main": ".dist/main.js",
   "scripts": {
     "build": "npm run typecheck && node esbuild.config.mjs",
-    "dev": "node ../../libs/obsidian-plugin-utils/scripts/push-to-vaults.js && node esbuild.config.mjs --watch",
+    "dev": "node ../../libs/obsidian-plugin-utils/scripts/push-to-obsidianVaults.js && node esbuild.config.mjs --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write .",
