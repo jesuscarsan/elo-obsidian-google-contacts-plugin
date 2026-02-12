@@ -1,8 +1,9 @@
-import { Contact, ContactAdapter } from "../../Domain/Contact";
-import { GoogleContactPluginSettings } from "../Obsidian/settings";
+import { Contact } from "../../../Domain/Contact";
+import { ContactAdapter } from "../../../Domain/Ports/ContactAdapter";
+import { GoogleContactPluginSettings } from "../../Obsidian/settings";
 import { Notice, requestUrl, RequestUrlParam } from "obsidian";
-import { GoogleContactMapper } from "../api/mappers/GoogleContactMapper";
-import { GooglePersonResponse, GoogleConnectionsResponse, GoogleSearchResponse, GoogleContactGroupsResponse } from "../api/dtos/GooglePersonResponse";
+import { GoogleContactMapper } from "./api/mappers/GoogleContactMapper";
+import { GooglePersonResponse, GoogleConnectionsResponse, GoogleSearchResponse, GoogleContactGroupsResponse } from "./api/dtos/GooglePersonResponse";
 
 export class GoogleContactAdapter implements ContactAdapter {
     private settings: GoogleContactPluginSettings;
@@ -222,9 +223,9 @@ export class GoogleContactAdapter implements ContactAdapter {
         // Handle Groups / Memberships
         if (contact.groups) {
             updateMask.push("memberships");
-           
+
             const currentMemberships = current.memberships || [];
-            
+
             const newMemberships = [];
 
             // Add Target Groups

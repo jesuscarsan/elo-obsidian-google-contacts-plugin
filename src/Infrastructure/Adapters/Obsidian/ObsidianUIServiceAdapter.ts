@@ -1,9 +1,9 @@
 import { App, FuzzySuggestModal, Notice } from "obsidian";
-import { UIService } from "../../Domain/ports/UIService";
-import { Contact } from "../../Domain/Contact";
+import { UIService } from "../../../Domain/Ports/UIService";
+import { Contact } from "../../../Domain/Contact";
 
-export class ObsidianUIService implements UIService {
-    constructor(private app: App) {}
+export class ObsidianUIServiceAdapter implements UIService {
+    constructor(private app: App) { }
 
     async selectContact(noteName: string, query: string, candidates: Contact[]): Promise<Contact | null> {
         return new Promise((resolve) => {
@@ -21,7 +21,7 @@ export class ObsidianUIService implements UIService {
     async confirm(title: string, message: string): Promise<boolean> {
         // Simple placeholder, real confirmation modal would be better
         // For now just return true or implement a simple Modal
-        return true; 
+        return true;
     }
 }
 

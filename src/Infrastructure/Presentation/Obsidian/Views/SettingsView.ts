@@ -1,6 +1,6 @@
 
 import { App, PluginSettingTab, Setting } from 'obsidian';
-import EloGoogleContactsPlugin from '../../../main';
+import EloGoogleContactsPlugin from '../../../../main';
 
 export class SettingsView extends PluginSettingTab {
     plugin: EloGoogleContactsPlugin;
@@ -37,7 +37,7 @@ export class SettingsView extends PluginSettingTab {
                     this.plugin.settings.googleClientSecret = value;
                     await this.plugin.saveSettings();
                 }));
-        
+
 
     }
 }

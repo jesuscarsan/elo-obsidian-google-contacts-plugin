@@ -1,6 +1,6 @@
 import { App, Modal, Setting } from 'obsidian';
-import { showMessage } from '../Utils/Messages';
-import { GoogleContactAdapter } from '../../Adapters/GoogleContactAdapter';
+import { showMessage } from '../../../Obsidian/Utils/Messages';
+import { GoogleContactAdapter } from '../../../Adapters/Google/GoogleContactAdapter';
 
 export class GoogleAuthModal extends Modal {
     adapter: GoogleContactAdapter;

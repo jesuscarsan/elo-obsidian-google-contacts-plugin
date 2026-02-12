@@ -1,6 +1,7 @@
-import { Contact, ContactAdapter } from "../../Domain/Contact";
+import { Contact } from "../../Domain/Contact";
+import { ContactAdapter } from "../../Domain/Ports/ContactAdapter";
 import { NoteRepository } from "@elo/obsidian-plugin";
-import { UIService } from "../../Domain/ports/UIService";
+import { UIService } from "../../Domain/Ports/UIService";
 import { GoogleContactTransformer } from "../../Domain/GoogleContactTransformer";
 
 export class SyncContactUseCase {
@@ -8,7 +9,7 @@ export class SyncContactUseCase {
         private noteRepo: NoteRepository,
         private uiService: UIService,
         private adapter: ContactAdapter,
-        private transformer: GoogleContactTransformer 
+        private transformer: GoogleContactTransformer
     ) { }
 
     /**
@@ -26,16 +27,16 @@ export class SyncContactUseCase {
         // We should probably move transformation logic here or update transformer to use generic objects
         // For now, assuming transformer is also refactored or we do it inline here.
         // Let's assume transformer needs refactoring too, but for now we pass plain objects
-        
+
         // Wait, `GoogleContactTransformer.toContact` takes (file: TFile, frontmatter: any, tags: string[])
         // We need to fix that too.
         // Ideally transformer should be pure domain service found in Domain/Services?
         // Or just a utility class. It sits in Infrastructure currently.
         const tags = metadata.tags || [];
-        
+
         // TEMPORARY: We might need to adjust transformer signature.
         // For this step I will assume transformer takes (basename, frontmatter, tags)
-        
+
         const contactData = this.transformer.toContactFromMetadata(metadata.basename, frontmatter, tags);
         let selectedCandidate: Contact | null = null;
 
@@ -96,7 +97,7 @@ export class SyncContactUseCase {
             }
         };
         await this.adapter.upsertContact(updatedContact);
-        
+
         // Get basename for notification
         const meta = await this.noteRepo.getNoteMetadata(notePath);
         this.uiService.notify(`Enlazado: ${contact.name} <-> ${meta?.basename}`);

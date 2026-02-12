@@ -1,0 +1,20 @@
+export default {
+	'plugin.name': 'Plugin de Google Contacts',
+	'command.syncActiveNote': 'Contactos: Sincronizar Nota Activa con Google',
+	'command.processUnsynced': 'Contactos: Procesar No Sincronizados de Google',
+	'contacts.noActiveFile': 'No hay ninguna nota activa.',
+	'contacts.notAPerson': 'La nota activa no es una Persona (falta tag #Personas).',
+	'contacts.syncing': 'Sincronizando con Google: {{name}}...',
+	'contacts.syncComplete': 'Sincronización con Google completada para {{name}}',
+	'contacts.authRequired': 'Autenticación necesaria con Google.',
+	'contacts.authSuccess': 'Autenticado correctamente. Ejecuta el comando de nuevo.',
+	'contacts.syncError': 'Error al sincronizar con Google: {{error}}',
+	'contacts.searchingUnsynced': 'Buscando contactos no sincronizados en Google...',
+	'contacts.noUnsyncedFound': 'No se encontraron contactos pendientes de sincronizar.',
+	'contacts.batchTitle': 'Contactos de Google No Sincronizados',
+	'contacts.batchDesc':
+		'Se muestran hasta 10 contactos pendientes. Elige una acción para cada uno.',
+	'contacts.noteCreated': 'Nota creada: {{path}}',
+	'contacts.movedToObsidian': 'Movido a Obsidian: {{name}}',
+	'contacts.deletedFromGoogle': 'Eliminado de Google: {{name}}',
+};

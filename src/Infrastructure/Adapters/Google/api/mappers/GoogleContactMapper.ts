@@ -1,7 +1,7 @@
-import { Contact } from '../../../Domain/Contact';
-import { 
-    GooglePersonResponse, 
-    GooglePersonPayload, 
+import { Contact } from '../../../../../Domain/Contact';
+import {
+    GooglePersonResponse,
+    GooglePersonPayload,
     GoogleName
 } from '../dtos/GooglePersonResponse';
 
@@ -10,7 +10,7 @@ export class GoogleContactMapper {
     constructor(
         private groupIdsToNames: Map<string, string>,
         private groupNamesToIds: Map<string, string>
-    ) {}
+    ) { }
 
     toDomain(person: GooglePersonResponse): Contact {
         const names = person.names || [];
